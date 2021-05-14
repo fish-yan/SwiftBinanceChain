@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
     sub.dependency 'Starscream', '~> 3.1'
     sub.dependency 'XCGLogger', '~> 7.0'
     sub.dependency 'SwiftDate', '~> 6.0.1'
+    sub.dependency 'HDWalletKit', :git => 'https://github.com/mghnmtt/HDWalletKit-1'
   end
 
   s.subspec 'Util' do |sub|
