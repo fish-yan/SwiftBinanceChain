@@ -32,7 +32,7 @@ public class Message {
     private var quantity: Double = 0
     private var timeInForce: TimeInForce = .goodTillExpire
     private var data: Data = Data()
-    private var memo: String = ""
+    public var memo: String = ""
     private var toAddress: String = ""
     private var proposalId: Int = 0
     private var voteOption: VoteOption = .no
