@@ -17,7 +17,7 @@ let package = Package(
         .package(url: "https://github.com/DaveWoodCom/XCGLogger.git", from: "7.0.0"),
         .package(url: "https://github.com/malcommac/SwiftDate", from: "6.0.1"),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift", from: "1.8.4"),
-        .package(url: "https://github.com/21-DOT-DEV/swift-secp256k1", exact: "0.19.0"),
+        .package(url: "https://github.com/21-DOT-DEV/swift-secp256k1", from: "0.19.0"),
         .package(url: "https://github.com/fish-yan/HDWalletKit.git", branch: "main")
     ],
     targets: [
