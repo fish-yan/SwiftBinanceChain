@@ -1,10 +1,13 @@
-// swift-tools-version:5.9
+// swift-tools-version:5.0
 import PackageDescription
 
 let package = Package(
     name: "BinanceChain",
     platforms: [
-        .iOS(.v13),
+        .macOS(.v10_11),
+        .iOS(.v11),
+        .tvOS(.v11),
+        .watchOS(.v2)
     ],
     products: [
         .library(name: "BinanceChain", targets: ["binancechain"]),
@@ -17,22 +20,13 @@ let package = Package(
         .package(url: "https://github.com/DaveWoodCom/XCGLogger.git", from: "7.0.0"),
         .package(url: "https://github.com/malcommac/SwiftDate", from: "6.0.1"),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift", from: "1.8.4"),
-        .package(url: "https://github.com/21-DOT-DEV/swift-secp256k1", from: "0.19.0"),
-        .package(url: "https://github.com/fish-yan/HDWalletKit.git", branch: "main")
+        .package(url: "https://github.com/21-DOT-DEV/swift-secp256k1", .exact("0.19.0")),
+        .package(url: "https://github.com/fish-yan/HDWalletKit.git", .branch("main"))
     ],
     targets: [
         .target(name: "binancechain",
-                dependencies: [
-                    .product(name: "SwiftProtobuf", package: "swift-protobuf"),
-                    "Alamofire",
-                    "SwiftyJSON",
-                    "Starscream",
-                    "HDWalletKit",
-                    "XCGLogger",
-                    .product(name: "secp256k1", package: "swift-secp256k1"),
-                    "SwiftDate",
-                    "CryptoSwift"
-                ],
+                dependencies: ["SwiftProtobuf", "Alamofire", "SwiftyJSON", "Starscream", "HDWalletKit",
+                               "XCGLogger", "secp256k1", "SwiftDate", "CryptoSwift"],
                 path: "BinanceChain/Sources")
     ]
 )
